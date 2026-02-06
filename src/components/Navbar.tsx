@@ -49,7 +49,7 @@ const Navbar: React.FC = () => {
               Onyx
             </span>
             <span className="text-neon inline-block group-hover:-translate-x-px group-hover:translate-y-px transition-transform duration-100">
-              Software
+              Solutions
             </span>
           </span>
         </a>
@@ -69,7 +69,7 @@ const Navbar: React.FC = () => {
                 {hoveredIndex === index && (
                   <motion.div
                     layoutId="nav-underline"
-                    className="absolute bottom-0 left-0 w-full h-[2px] bg-neon shadow-[0_0_8px_#00F0FF]"
+                    className="absolute bottom-0 left-0 w-full h-0.5 bg-neon shadow-[0_0_8px_#00F0FF]"
                     initial={{ opacity: 0, width: 0 }}
                     animate={{ opacity: 1, width: "100%" }}
                     exit={{ opacity: 0, width: 0 }}
@@ -91,7 +91,7 @@ const Navbar: React.FC = () => {
                 className="group-hover:translate-x-1 transition-transform"
               />
             </span>
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent translate-x-[-100%] group-hover:animate-[shimmer_1s_infinite]" />
+            <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/40 to-transparent -translate-x-full group-hover:animate-[shimmer_1s_infinite]" />
           </a>
         </div>
 
