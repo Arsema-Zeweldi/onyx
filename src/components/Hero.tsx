@@ -102,37 +102,36 @@ const Hero: React.FC = () => {
           </div>
         </motion.div>
 
-        {/* Visual Content - Interactive 3D Dashboard */}
-        <motion.div
-          className="lg:col-span-5 relative h-150 w-full flex items-center justify-center perspective-1000"
+        {/* Visual Content - Business Impact Showcase */}
+        <motion.div 
+          className="lg:col-span-5 relative h-[600px] w-full flex items-center justify-center"
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, delay: 0.2 }}
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
         >
-          {/* Main Analytics Dashboard - Mouse Parallax */}
-          <motion.div
-            className="relative w-full max-w-md bg-navy-900/80 backdrop-blur-xl border border-slate-700/50 rounded-2xl shadow-2xl overflow-hidden z-10"
-            style={{
-              rotateX,
-              rotateY,
-              transformStyle: "preserve-3d",
-            }}
-            transition={{ type: "spring", stiffness: 300, damping: 30 }}
-          >
-            {/* Glass Shine */}
-            <div className="absolute inset-0 bg-linear-to-br from-white/5 via-transparent to-transparent pointer-events-none z-20" />
-
-            {/* Header */}
-            <div className="h-14 border-b border-white/10 flex items-center justify-between px-6 bg-navy-950/50">
-              <div className="flex items-center gap-3">
-                <div className="p-1.5 bg-neon/20 rounded-lg">
-                  <Activity size={16} className="text-neon" />
+          {/* Client Success Grid */}
+          <div className="relative w-full h-full grid grid-cols-3 gap-4 p-8">
+            
+            {/* Card 1 - Revenue Growth */}
+            <motion.div
+              className="col-span-2 row-span-1 bg-gradient-to-br from-green-500/10 to-emerald-500/10 backdrop-blur-sm border border-green-400/20 rounded-2xl p-6 flex flex-col justify-between"
+              style={{ 
+                y: useTransform(mouseY, [-0.5, 0.5], [-10, 10]),
+              }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+            >
+              <div className="flex items-start justify-between">
+                <div className="p-3 bg-green-400/20 rounded-xl">
+                  <TrendingUp className="text-green-400" size={24} />
                 </div>
-                <span className="font-bold text-sm text-white">
-                  Growth Overview
-                </span>
+                <div className="text-right">
+                  <div className="text-2xl font-bold text-white">+{Math.floor(revenue / 1000)}%</div>
+                  <div className="text-xs text-green-300">Revenue Increase</div>
+                </div>
               </div>
               <div className="mt-4">
                 <div className="text-sm font-semibold text-white mb-2">Grow Your Business</div>
@@ -140,114 +139,63 @@ const Hero: React.FC = () => {
                   Our clients see measurable growth within 90 days
                 </p>
               </div>
-            </div>
+            </motion.div>
 
-            {/* Main Content */}
-            <div className="p-6">
-              <div className="flex justify-between items-end mb-6">
-                <div>
-                  {/* <p className="text-xs text-slate-400 uppercase tracking-wider mb-1">
-                    Monthly Revenue
-                  </p>
-                  <h3 className="text-3xl font-bold text-white font-mono">
-                    ${revenue.toLocaleString()}
-                  </h3> */}
+            {/* Card 2 - Customer Satisfaction */}
+            <motion.div
+              className="row-span-2 bg-gradient-to-br from-purple-500/10 to-pink-500/10 backdrop-blur-sm border border-purple-400/20 rounded-2xl p-6 flex flex-col justify-between"
+              style={{ 
+                y: useTransform(mouseY, [-0.5, 0.5], [15, -15]),
+              }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+            >
+              <div>
+                <div className="p-3 bg-purple-400/20 rounded-xl w-fit mb-4">
+                  <Activity className="text-purple-400" size={24} />
                 </div>
-                {/* <motion.div
-                  initial={{ scale: 0.8, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  transition={{ delay: 1, type: "spring" }}
-                  className="px-3 py-1 bg-green-500/20 text-green-400 rounded-full text-xs font-bold flex items-center gap-1"
-                >
-                  <TrendingUp size={12} />
-                  +24.5%
-                </motion.div> */}
-              </div>
-
-              {/* Animated Chart Area */}
-              <div className="h-32 w-full relative">
-                <svg
-                  className="w-full h-full overflow-visible"
-                  preserveAspectRatio="none"
-                  viewBox="0 0 100 50"
-                >
-                  <defs>
-                    <linearGradient
-                      id="chartGradient"
-                      x1="0"
-                      y1="0"
-                      x2="0"
-                      y2="1"
+                <div className="text-sm font-semibold text-white mb-4">Happy Customers</div>
+                
+                {/* Star Rating */}
+                <div className="flex gap-1 mb-3">
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <motion.svg
+                      key={star}
+                      className="w-5 h-5 fill-yellow-400 text-yellow-400"
+                      viewBox="0 0 20 20"
+                      initial={{ scale: 0, rotate: -180 }}
+                      animate={{ scale: 1, rotate: 0 }}
+                      transition={{ delay: 0.6 + (star * 0.1), type: "spring" }}
                     >
-                      <stop offset="0%" stopColor="#00F0FF" stopOpacity="0.3" />
-                      <stop offset="100%" stopColor="#00F0FF" stopOpacity="0" />
-                    </linearGradient>
-                  </defs>
-                  <motion.path
-                    d="M0,50 L0,35 Q10,40 20,25 T40,20 T60,30 T80,10 L100,5 L100,50 Z"
-                    fill="url(#chartGradient)"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 1, delay: 0.5 }}
-                  />
-                  <motion.path
-                    d="M0,35 Q10,40 20,25 T40,20 T60,30 T80,10 L100,5"
-                    fill="none"
-                    stroke="#00F0FF"
-                    strokeWidth="2"
-                    initial={{ pathLength: 0 }}
-                    animate={{ pathLength: 1 }}
-                    transition={{ duration: 2, ease: "easeInOut" }}
-                  />
-                  {/* Data Points */}
-                  {[25, 20, 30, 10, 5].map((y, i) => (
-                    <motion.circle
-                      key={i}
-                      cx={20 * (i + 1)}
-                      cy={y}
-                      r="2"
-                      fill="#0A0E14"
-                      stroke="#00F0FF"
-                      strokeWidth="1.5"
-                      initial={{ scale: 0 }}
-                      animate={{ scale: 1 }}
-                      transition={{ delay: 1 + i * 0.2 }}
-                    />
+                      <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                    </motion.svg>
                   ))}
-                </svg>
-              </div>
-
-              {/* Bottom Metrics */}
-              <div className="grid grid-cols-2 gap-4 mt-6 pt-6 border-t border-white/5">
-                <div>
-                  <p className="text-[10px] text-slate-500 uppercase mb-1">
-                    Active Users
-                  </p>
-                  <div className="flex items-center gap-2">
-                    <div className="flex -space-x-2">
-                      {[1, 2, 3].map((i) => (
-                        <div
-                          key={i}
-                          className="w-6 h-6 rounded-full bg-slate-700 border border-navy-900 flex items-center justify-center text-[8px] text-white overflow-hidden"
-                        >
-                          <img
-                            src={`https://picsum.photos/50/50?random=${i + 30}`}
-                            alt="User"
-                            className="w-full h-full object-cover"
-                          />
-                        </div>
-                      ))}
-                    </div>
-                    {/* <span className="text-xs font-bold text-white">4.2k+</span> */}
-                  </div>
                 </div>
-                <div>
-                  <p className="text-[10px] text-slate-500 uppercase mb-1">
-                    Server Uptime
-                  </p>
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                    <span className="text-sm font-bold text-white">99.99%</span>
+                <div className="text-2xl font-bold text-white mb-1">4.9/5.0</div>
+                <p className="text-[11px] text-slate-400">Average client rating across 100+ projects</p>
+              </div>
+            </motion.div>
+
+            {/* Card 3 - Time to Market */}
+            <motion.div
+              className="col-span-2 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 backdrop-blur-sm border border-cyan-400/20 rounded-2xl p-6"
+              style={{ 
+                y: useTransform(mouseY, [-0.5, 0.5], [-5, 5]),
+              }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5 }}
+            >
+              <div className="flex items-start gap-4">
+                <div className="p-3 bg-cyan-400/20 rounded-xl">
+                  <Globe className="text-cyan-400" size={24} />
+                </div>
+                <div className="flex-1">
+                  <div className="text-sm font-semibold text-white mb-2">Launch Faster</div>
+                  <div className="flex items-baseline gap-2 mb-2">
+                    <span className="text-3xl font-bold text-cyan-400">6-8</span>
+                    <span className="text-xs text-slate-400">weeks to launch</span>
                   </div>
                   <p className="text-[11px] text-slate-400">
                     Beat your competition to market with rapid delivery
@@ -256,111 +204,70 @@ const Hero: React.FC = () => {
               </div>
             </motion.div>
 
-          {/* Floating Elements (Ecosystem Nodes) - Parallax Multipliers */}
+            {/* Card 4 - Cost Savings */}
+            <motion.div
+              className="bg-gradient-to-br from-neon/10 to-cyan-400/10 backdrop-blur-sm border border-neon/20 rounded-2xl p-6 flex flex-col justify-center items-center text-center"
+              style={{ 
+                y: useTransform(mouseY, [-0.5, 0.5], [10, -10]),
+              }}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.6 }}
+            >
+              <div className="text-4xl font-bold text-neon mb-1">40%</div>
+              <div className="text-xs text-slate-400 uppercase tracking-wider mb-2">Cost Savings</div>
+              <p className="text-[10px] text-slate-500">vs. hiring in-house team</p>
+            </motion.div>
 
-          {/* Global Reach Card */}
-          <motion.div
-            className="absolute -right-4 top-20 p-4 bg-navy-800/90 backdrop-blur-md border border-cyan-400/30 rounded-xl shadow-xl z-20 w-40"
-            style={{
-              x: useTransform(mouseX, [-0.5, 0.5], [-20, 20]),
-              y: useTransform(mouseY, [-0.5, 0.5], [-20, 20]),
-            }}
-          >
-            <div className="flex items-center gap-3 mb-2">
-              <div className="p-1.5 bg-cyan-400/20 rounded-lg text-cyan-400">
-                <Globe size={24} />
+            {/* Card 5 - Support */}
+            <motion.div
+              className="bg-gradient-to-br from-orange-500/10 to-yellow-500/10 backdrop-blur-sm border border-orange-400/20 rounded-2xl p-6 flex flex-col justify-center"
+              style={{ 
+                x: useTransform(mouseX, [-0.5, 0.5], [-10, 10]),
+              }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.7 }}
+            >
+              <div className="flex items-center gap-3 mb-3">
+                <div className="p-2 bg-orange-400/20 rounded-lg">
+                  <ShieldCheck className="text-orange-400" size={20} />
+                </div>
+                <div>
+                  <div className="text-sm font-semibold text-white">24/7 Support</div>
+                  <p className="text-[10px] text-slate-400">We've got your back</p>
+                </div>
               </div>
-              <span className="text-xs font-bold text-slate-200">Global</span>
-            </div>
-            {/* <div className="h-1.5 w-full bg-navy-950 rounded-full overflow-hidden">
-              <motion.div
-                className="h-full bg-cyan-400"
-                initial={{ width: 0 }}
-                animate={{ width: "75%" }}
-                transition={{ duration: 1.5, delay: 1 }}
-              />
-            </div>
-            <div className="flex justify-between mt-1">
-              <span className="text-[10px] text-slate-500">Regions</span>
-              <span className="text-[10px] text-cyan-400">12 Active</span>
-            </div> */}
-          </motion.div>
-
-          {/* Security/Trust Card */}
-          <motion.div
-            className="absolute -left-8 bottom-32 p-3 bg-navy-800/90 backdrop-blur-md border border-neon/30 rounded-xl shadow-xl flex items-center gap-3 z-20"
-            style={{
-              x: useTransform(mouseX, [-0.5, 0.5], [30, -30]),
-              y: useTransform(mouseY, [-0.5, 0.5], [20, -20]),
-            }}
-          >
-            <div className="p-2 bg-neon/10 rounded-full text-neon border border-neon/20">
-              <ShieldCheck size={20} />
-            </div>
-            <div className="text-xs">
-              <div className="text-white font-bold">Secure System</div>
-              <div className="text-neon">Verified</div>
-            </div>
-          </motion.div>
-
-          {/* Users Card */}
-          <motion.div
-            className="absolute right-8 -bottom-4 p-3 bg-navy-800/90 backdrop-blur-md border border-purple-500/30 rounded-xl shadow-xl flex items-center gap-3 z-0"
-            style={{
-              x: useTransform(mouseX, [-0.5, 0.5], [-10, 10]),
-              y: useTransform(mouseY, [-0.5, 0.5], [-10, 10]),
-            }}
-          >
-            <div className="flex -space-x-3">
-              <div className="w-8 h-8 rounded-full border-2 border-navy-800 bg-slate-700 overflow-hidden">
-                <img
-                  src="https://picsum.photos/50/50?random=40"
-                  className="w-full h-full object-cover"
-                />
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                <span className="text-[11px] text-green-400 font-medium">Always Available</span>
               </div>
-              <div className="w-8 h-8 rounded-full border-2 border-navy-800 bg-slate-700 overflow-hidden">
-                <img
-                  src="https://picsum.photos/50/50?random=41"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-            <div>
-              <div className="text-xs font-bold text-white">New Clients</div>
-              <div className="text-[10px] text-slate-400">Just joined</div>
-            </div>
-          </motion.div>
+            </motion.div>
 
-          {/* Connecting Lines (SVG) */}
-          <svg className="absolute inset-0 pointer-events-none w-full h-full -z-10 opacity-30">
-            <line
-              x1="50%"
-              y1="50%"
-              x2="85%"
-              y2="25%"
-              stroke="#40C4FF"
-              strokeWidth="1"
+          </div>
+
+          {/* Animated Connection Lines */}
+          <svg className="absolute inset-0 pointer-events-none w-full h-full opacity-20">
+            <motion.line 
+              x1="33%" y1="33%" x2="66%" y2="50%" 
+              stroke="#00F0FF" 
+              strokeWidth="1" 
               strokeDasharray="4 4"
+              initial={{ pathLength: 0 }}
+              animate={{ pathLength: 1 }}
+              transition={{ duration: 2, delay: 1 }}
             />
-            <line
-              x1="50%"
-              y1="50%"
-              x2="15%"
-              y2="65%"
-              stroke="#00F0FF"
-              strokeWidth="1"
+            <motion.line 
+              x1="66%" y1="66%" x2="33%" y2="50%" 
+              stroke="#a855f7" 
+              strokeWidth="1" 
               strokeDasharray="4 4"
-            />
-            <line
-              x1="50%"
-              y1="50%"
-              x2="70%"
-              y2="80%"
-              stroke="#a855f7"
-              strokeWidth="1"
-              strokeDasharray="4 4"
+              initial={{ pathLength: 0 }}
+              animate={{ pathLength: 1 }}
+              transition={{ duration: 2, delay: 1.2 }}
             />
           </svg>
+
         </motion.div>
       </div>
 
