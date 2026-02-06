@@ -41,15 +41,15 @@ const Navbar: React.FC = () => {
       <div className="container mx-auto px-6 flex justify-between items-center relative">
         {/* Logo */}
         <a href="#" className="flex items-center gap-2 group relative z-10">
-          <div className="w-8 h-8 rounded-md border border-neon bg-neon/10 flex items-center justify-center group-hover:box-glow transition-all duration-300 overflow-hidden">
-            <div className="w-3 h-3 bg-neon rounded-sm group-hover:rotate-45 transition-transform duration-300"></div>
-          </div>
+          <svg className="w-8 h-8 fill-neon" viewBox="0 0 595.28 618.84" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="103.91 618.84 419.23 618.84 517.07 448.87 194.79 448.87 348.52 179.26 424.94 313.53 595.28 313.53 424.58 0 339.6 147.48 172.12 147.48 0 444.94 103.91 618.84" />
+          </svg>
           <span className="font-bold text-xl tracking-tight text-white group-hover:animate-pulse">
-            <span className="inline-block group-hover:translate-x-px group-hover:-translate-y-px transition-transform duration-100">
+            <span className="inline-block group-hover:translate-x-px group-hover:-translate-y-px transition-transform duration-100 pr-1">
               Onyx
             </span>
             <span className="text-neon inline-block group-hover:-translate-x-px group-hover:translate-y-px transition-transform duration-100">
-              Software
+            Software
             </span>
           </span>
         </a>

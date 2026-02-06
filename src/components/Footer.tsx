@@ -8,41 +8,18 @@ const Footer: React.FC = () => {
 
   return (
     <footer className="bg-navy-950 pt-32 pb-10 border-t border-white/10 text-slate-400 text-sm relative overflow-hidden">
-      
-      {/* Giant Watermark SVG - Fits perfectly without cutoff */}
-      <div className="absolute bottom-0 left-0 w-full pointer-events-none select-none opacity-[0.03] leading-none overflow-hidden z-0">
-        <svg 
-          width="100%" 
-          height="100%" 
-          viewBox="0 0 1800 350" 
-          preserveAspectRatio="xMidYMax slice"
-          className="w-full"
-        >
-          <text 
-            x="50%" 
-            y="55%" 
-            dominantBaseline="middle"
-            textAnchor="middle" 
-            fill="white" 
-            className="font-bold tracking-tighter text-[280px] lg:text-[320px]" 
-            style={{ fontFamily: 'Figtree, sans-serif' }}
-          >
-            PLACEHOLDER
-          </text>
-        </svg>
-      </div>
-
+    
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-24">
           
           {/* Brand */}
           <div className="space-y-6">
             <a href="#" className="flex items-center gap-2 group w-fit">
-              <div className="w-8 h-8 rounded-md bg-neon flex items-center justify-center group-hover:rotate-12 transition-transform">
-                <div className="w-3 h-3 bg-navy-950 rounded-sm"></div>
-              </div>
+              <svg className="w-8 h-8 fill-neon" viewBox="0 0 595.28 618.84" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="103.91 618.84 419.23 618.84 517.07 448.87 194.79 448.87 348.52 179.26 424.94 313.53 595.28 313.53 424.58 0 339.6 147.48 172.12 147.48 0 444.94 103.91 618.84" />
+          </svg>
               <span className="font-bold text-2xl text-white tracking-tight">
-                Placeholder<span className="text-neon">Labs</span>
+                Onyx<span className="text-neon pl-1">Software</span>
               </span>
             </a>
             <p className="leading-relaxed max-w-xs">
