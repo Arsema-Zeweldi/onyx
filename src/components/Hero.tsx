@@ -108,6 +108,8 @@ const Hero: React.FC = () => {
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, delay: 0.2 }}
+          onMouseMove={handleMouseMove}
+          onMouseLeave={handleMouseLeave}
         >
           {/* Main Analytics Dashboard - Mouse Parallax */}
           <motion.div
@@ -132,10 +134,11 @@ const Hero: React.FC = () => {
                   Growth Overview
                 </span>
               </div>
-              <div className="flex gap-1.5">
-                <div className="w-1.5 h-1.5 rounded-full bg-slate-600" />
-                <div className="w-1.5 h-1.5 rounded-full bg-slate-600" />
-                <div className="w-1.5 h-1.5 rounded-full bg-slate-600" />
+              <div className="mt-4">
+                <div className="text-sm font-semibold text-white mb-2">Grow Your Business</div>
+                <p className="text-[11px] text-slate-400 leading-relaxed">
+                  Our clients see measurable growth within 90 days
+                </p>
               </div>
             </div>
 
@@ -246,10 +249,12 @@ const Hero: React.FC = () => {
                     <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
                     <span className="text-sm font-bold text-white">99.99%</span>
                   </div>
+                  <p className="text-[11px] text-slate-400">
+                    Beat your competition to market with rapid delivery
+                  </p>
                 </div>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
 
           {/* Floating Elements (Ecosystem Nodes) - Parallax Multipliers */}
 
