@@ -42,9 +42,13 @@ const Footer: React.FC = () => {
           {/* Brand */}
           <div className="space-y-6">
             <a href="#" className="flex items-center gap-2 group w-fit">
-              <div className="w-8 h-8 rounded-md bg-neon flex items-center justify-center group-hover:rotate-12 transition-transform">
-                <div className="w-3 h-3 bg-navy-950 rounded-sm"></div>
-              </div>
+              <svg
+                className="w-8 h-8 fill-neon"
+                viewBox="0 0 595.28 618.84"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <polygon points="103.91 618.84 419.23 618.84 517.07 448.87 194.79 448.87 348.52 179.26 424.94 313.53 595.28 313.53 424.58 0 339.6 147.48 172.12 147.48 0 444.94 103.91 618.84" />
+              </svg>
               <span className="font-bold text-2xl text-white tracking-tight">
                 Onyx<span className="text-neon">Solutions</span>
               </span>

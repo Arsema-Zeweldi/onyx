@@ -131,7 +131,7 @@ const Contact: React.FC = () => {
                 </div>
                 <button
                   type="submit"
-                  className="w-full bg-neon text-navy-950 font-bold py-4 rounded-xl hover:bg-white transition-all duration-300 shadow-[0_0_20px_rgba(221,255,0,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.4)] hover:scale-[1.02] flex items-center justify-center gap-2 group"
+                  className="w-full bg-neon text-navy-950 font-bold py-4 rounded-xl hover:bg-white transition-all duration-300 shadow-[0_0_20px_oklch(0.88_0.15_195/0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.4)] hover:scale-[1.02] flex items-center justify-center gap-2 group"
                 >
                   Send Message{" "}
                   <ArrowRight
