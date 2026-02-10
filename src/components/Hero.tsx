@@ -93,12 +93,7 @@ const Hero: React.FC = () => {
             >
               Get Started <ArrowRight size={18} />
             </a>
-            <button className="px-8 py-4 bg-transparent border border-slate-700 text-white font-medium rounded-full hover:border-neon hover:text-neon transition-all duration-300 flex items-center gap-2 group">
-              <div className="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-neon/20 transition-colors">
-                <Play size={10} className="fill-current" />
-              </div>
-              Learn More
-            </button>
+            
           </div>
         </motion.div>
       </div>

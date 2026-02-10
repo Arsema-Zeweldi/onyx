@@ -7,6 +7,7 @@ import {
   Database,
   Cpu,
   ArrowRight,
+  Paintbrush,
 } from "lucide-react";
 import SectionDivider from "./ui/SectionDivider";
 import { motion, Variants } from "framer-motion";
@@ -31,17 +32,17 @@ const services = [
   {
     title: "Website Development",
     icon: <Cloud className="w-6 h-6" />,
-    desc: "",
-  },
-  {
-    title: "Data Engineering",
-    icon: <Database className="w-6 h-6" />,
-    desc: "High-performance pipelines to process, store, and analyze your data.",
+    desc: "Creating fully functional static websites and web-apps based on your needs.",
   },
   {
     title: "AI Solutions",
     icon: <Cpu className="w-6 h-6" />,
-    desc: "Integrating LLMs and machine learning models into everyday workflows.",
+    desc: "Integrating LLMs API's into everyday workflows.",
+  },
+  {
+    title: "UI/UX Design",
+    icon: <Paintbrush className="w-6 h-6" />,
+    desc: "Creating visually appealing and user-friendly interfaces.",
   },
 ];
 

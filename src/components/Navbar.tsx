@@ -84,19 +84,7 @@ const Navbar: React.FC = () => {
             ))}
           </div>
 
-          <a
-            href="#contact"
-            className="px-6 py-2.5 bg-neon text-navy-950 text-sm font-bold rounded-full hover:bg-white transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,240,255,0.4)] flex items-center gap-2 group overflow-hidden relative"
-          >
-            <span className="relative z-10 flex items-center gap-2">
-              Book a Demo{" "}
-              <ArrowRight
-                size={14}
-                className="group-hover:translate-x-1 transition-transform"
-              />
-            </span>
-            <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/40 to-transparent -translate-x-full group-hover:animate-[shimmer_1s_infinite]" />
-          </a>
+         
         </div>
 
         {/* Mobile Toggle */}

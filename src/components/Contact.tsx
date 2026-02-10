@@ -70,7 +70,7 @@ const Contact: React.FC = () => {
                     Email Us
                   </p>
                   <span className="text-xl font-medium">
-                    onyxsolutions@onyx.et
+                    info@onyx.et
                   </span>
                 </a>
               </a>

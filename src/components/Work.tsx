@@ -5,38 +5,32 @@ import { motion, useScroll, useTransform } from "framer-motion";
 const projects = [
   {
     id: "01",
-    title: "Restaurant Dashboard",
-    category: "Web Application",
-    description: "A ",
-    tags: ["Vue", "Laravel"],
-    image: "https://picsum.photos/800/600?random=1",
+    title: "Elelyale Shilmat",
+    category: "Voting Webapp",
+    description: "A voting website for an award ceremony. Built for Habesha Brewery Sc.",
+    tags: ["React", "Laravel"],
+    image: "habesha.png",
+    url: "https://elelyaleshilmat.com",
   },
   {
     id: "02",
-    title: "Elel yale Shilmat",
-    category: "Voting Website",
+    title: "Cozy Restaurant",
+    category: "Webapp",
     description:
-      "A voting website for an award ceremony. Built for Habesha Brewery Sc.",
-    tags: ["React", "Laravel"],
-    image: "https://picsum.photos/800/600?random=2",
+      "A menu management system for a local restaurant.",
+    tags: ["Vue", "Laravel"],
+    image: "cozy.png",
+    url: "https://cozy.onyx.et",
   },
   {
     id: "03",
-    title: "EcoTrack Mobile",
-    category: "IoT & Mobile",
+    title: "DigitalLink",
+    category: "Website",
     description:
-      "Cross-platform app connecting to smart sensors for industrial energy monitoring.",
-    tags: ["React Native", "GraphQL", "IoT"],
-    image: "https://picsum.photos/800/600?random=3",
-  },
-  {
-    id: "04",
-    title: "Nexus Protocol",
-    category: "Blockchain",
-    description:
-      "Decentralized governance interface for a next-gen layer 2 scaling solution.",
-    tags: ["Solidity", "Web3.js", "Next.js"],
-    image: "https://picsum.photos/800/600?random=4",
+      "A landing page for a digital marketing company.",
+    tags: ["Vue"],
+    image: "digitallink.png",
+    url: "https://digitallink.et",
   },
 ];
 
@@ -89,22 +83,24 @@ const Work: React.FC = () => {
 
           {/* Project Cards */}
           {projects.map((project, index) => (
-            <div
+            <a
               key={index}
-              className="group relative min-w-[85vw] md:min-w-200 h-[60vh] md:h-[70vh] bg-navy-900 rounded-4xl overflow-hidden border border-white/5 flex shrink-0 transition-transform duration-500 hover:scale-[1.01]"
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative min-w-[85vw] md:min-w-200 h-[60vh] md:h-[70vh] bg-navy-900 rounded-4xl overflow-hidden border border-white/5 flex shrink-0 transition-transform duration-500 hover:scale-[1.01] cursor-pointer"
             >
+              {/* External Link Icon - Top Right */}
+              <div className="absolute top-8 right-8 z-30 w-12 h-12 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white group-hover:bg-neon group-hover:text-navy-950 transition-all duration-300 opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0">
+                <ExternalLink size={20} />
+              </div>
+
               {/* Content Overlay (Left) */}
               <div className="absolute top-0 left-0 w-full h-full z-20 p-8 md:p-12 flex flex-col justify-between bg-linear-to-r from-navy-950/90 via-navy-950/40 to-transparent md:w-2/3">
-                <div className="flex justify-between items-start">
+                <div>
                   <span className="text-neon font-mono text-sm tracking-widest border border-neon/30 px-3 py-1 rounded-full bg-neon/10">
                     {project.id} — {project.category}
                   </span>
-                  <a
-                    href="#"
-                    className="w-12 h-12 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white hover:bg-neon hover:text-navy-950 transition-all duration-300 opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0"
-                  >
-                    <ArrowUpRight size={20} />
-                  </a>
                 </div>
 
                 <div>
@@ -114,7 +110,7 @@ const Work: React.FC = () => {
                   <p className="text-slate-200 text-lg mb-8 max-w-md drop-shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
                     {project.description}
                   </p>
-                  <div className="flex gap-2">
+                  <div className="flex gap-2 mb-4">
                     {project.tags.map((tag, i) => (
                       <span
                         key={i}
@@ -123,6 +119,12 @@ const Work: React.FC = () => {
                         {tag}
                       </span>
                     ))}
+                  </div>
+                  
+                  {/* View Project Link Text */}
+                  <div className="flex items-center gap-2 text-neon font-mono text-sm opacity-0 group-hover:opacity-100 translate-x-[-10px] group-hover:translate-x-0 transition-all duration-300 delay-150">
+                    <span>VIEW PROJECT</span>
+                    <ArrowUpRight size={16} className="animate-pulse" />
                   </div>
                 </div>
               </div>
@@ -136,7 +138,7 @@ const Work: React.FC = () => {
                 />
                 <div className="absolute inset-0 bg-navy-950/20 group-hover:bg-transparent transition-colors duration-500" />
               </div>
-            </div>
+            </a>
           ))}
 
           {/* "View All" End Card */}
@@ -161,9 +163,12 @@ const Work: React.FC = () => {
           <h2 className="text-4xl font-bold mb-10">Selected Work</h2>
           <div className="flex flex-col gap-10">
             {projects.map((project, index) => (
-              <div
+              <a
                 key={index}
-                className="bg-navy-900 rounded-2xl overflow-hidden border border-white/10"
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-navy-900 rounded-2xl overflow-hidden border border-white/10 block cursor-pointer hover:border-white/20 transition-colors"
               >
                 <div className="h-64 overflow-hidden">
                   <img
@@ -197,7 +202,7 @@ const Work: React.FC = () => {
                     ))}
                   </div>
                 </div>
-              </div>
+              </a>
             ))}
           </div>
         </div>

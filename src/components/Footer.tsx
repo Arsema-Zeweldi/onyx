@@ -7,7 +7,7 @@ const Footer: React.FC = () => {
   };
 
   const links = [
-    { Icon: Mail, href: "mailto:onyxsolutions@onyx.et" },
+    { Icon: Mail, href: "mailto:info@onyx.et" },
     // { Icon: Linkedin, href: "" },
     { Icon: Github, href: "https://github.com/onyxdotet" },
   ];
@@ -77,7 +77,7 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="text-white font-bold mb-6 text-lg">Company</h4>
             <ul className="space-y-4">
-              {["Home", "Services", "Our Work", "Team", "Contact"].map(
+              {["Home", "Services", "Work", "Team", "Contact"].map(
                 (item) => (
                   <li key={item}>
                     <a
@@ -102,7 +102,6 @@ const Footer: React.FC = () => {
               {[
                 "Web Development",
                 "Mobile Apps",
-                "Data Engineering",
                 "AI Integration",
                 "UI/UX Design",
               ].map((item) => (
@@ -123,14 +122,8 @@ const Footer: React.FC = () => {
         </div>
 
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p>© 2025 Onyx Solutions. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Onyx Solutions. All rights reserved.</p>
           <div className="flex items-center gap-6">
-            <a href="#" className="hover:text-white transition-colors">
-              Privacy Policy
-            </a>
-            <a href="#" className="hover:text-white transition-colors">
-              Terms of Use
-            </a>
             <button
               onClick={scrollToTop}
               className="ml-4 w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-neon hover:text-navy-950 transition-all"

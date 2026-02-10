@@ -7,7 +7,6 @@ const team = [
   {
     name: "Arsema G/Egziabher",
     role: "Front-end Developer",
-    quote: "Code is poetry written for machines.",
     image: "arsema.jpg",
     linkedin: "https://www.linkedin.com/in/arsema-z-4a8422195/",
     email: "mailto:arsema@onyx.et",
@@ -15,7 +14,6 @@ const team = [
   {
     name: "Beamlak Aschalew",
     role: "Back-end Developer",
-    quote: "Design is intelligence made visible.",
     image: "beamlak.jpg",
     linkedin: "https://www.linkedin.com/in/beamlak-aschalew",
     email: "mailto:beamlak@onyx.et",
@@ -23,7 +21,6 @@ const team = [
   {
     name: "Edlawit Taye",
     role: "Project Manager",
-    quote: "Coffee -> Code -> Repeat.",
     image: "https://picsum.photos/400/500?random=12",
     linkedin: "",
     email: "mailto:",
@@ -31,7 +28,6 @@ const team = [
   {
     name: "Faiz Ahmed",
     role: "Back-end Developer",
-    quote: "Shipping value, not just features.",
     image: "faiz.jpg",
     linkedin: "https://www.linkedin.com/in/faiz-ahmed-mohammed-823b4432a",
     email: "mailto:faizam@onyx.et",
@@ -101,9 +97,6 @@ const Team: React.FC = () => {
                 {/* Hidden Content revealed on hover */}
                 <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-500 ease-in-out">
                   <div className="overflow-hidden">
-                    <p className="text-slate-300 italic mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
-                      "{member.quote}"
-                    </p>
                     <div className="flex gap-4 mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200">
                       <div className="p-2 rounded-full bg-white/10 hover:bg-neon hover:text-navy-950 transition-colors">
                         <a href={member.linkedin}>
