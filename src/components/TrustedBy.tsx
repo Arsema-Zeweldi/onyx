@@ -1,24 +1,10 @@
 import React from "react";
 
-// Simple geometric SVG logos
+// PNG logos
 const Logos = [
-  { name: "Habesha Brewery", path: "M12 2L2 22h20L12 2z" }, // Triangle
-  {
-    name: "Cozy",
-    path: "M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 16a6 6 0 1 1 6-6 6 6 0 0 1-6 6z",
-  }, // Donut
-  { name: "Horizon", path: "M2 12h20M2 8h20M2 16h20" }, // Lines
-  {
-    name: "Pinnacle",
-    path: "M12 2l-5 9h10l-5-9zm-7 13l-3 7h6l-3-7zm14 0l-3 7h6l-3-7z",
-  }, // Mountains
-  { name: "Apex", path: "M12 2L2 12h5v10h10V12h5L12 2z" }, // Arrow Up
-  {
-    name: "Zenith",
-    path: "M12 2l2.5 7.5L22 12l-7.5 2.5L12 22l-2.5-7.5L2 12l7.5-2.5z",
-  }, // Star
-  { name: "Quantum", path: "M4 4h16v16H4z M8 8h8v8H8z" }, // Square in square
-  { name: "Cipher", path: "M2 12a10 10 0 0 1 10-10v20a10 10 0 0 1-10-10z" }, // Semi circle
+  { name: "Habesha Brewery", image: "habesha_logo.png" },
+  { name: "Cozy", image: "cozy_logo.png" },
+  { name: "DigitalLink", image: "digitallink_logo.png" },
 ];
 
 interface LogoItemProps {
@@ -28,13 +14,11 @@ interface LogoItemProps {
 
 const LogoItem: React.FC<LogoItemProps> = ({ logo, idx }) => (
   <div className="flex items-center gap-3 group/logo cursor-default opacity-40 hover:opacity-100 transition-opacity duration-300">
-    <svg
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      className="w-8 h-8 text-white group-hover/logo:text-neon group-hover/logo:drop-shadow-[0_0_8px_rgba(221,255,0,0.8)] transition-all"
-    >
-      <path d={logo.path} />
-    </svg>
+    <img
+      src={logo.image}
+      alt={logo.name}
+      className="w-20 h-20 object-contain group-hover/logo:drop-shadow-[0_0_8px_rgba(221,255,0,0.8)] transition-all"
+    />
     <span className="text-xl font-bold font-mono text-white uppercase tracking-tighter hidden md:block">
       {logo.name}
     </span>

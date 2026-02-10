@@ -43,7 +43,7 @@ const App: React.FC = () => {
       <main className="relative z-10">
         <Hero />
         <Services />
-        {/* <TrustedBy /> */}
+        <TrustedBy />
         <Work />
         <Team />
         {/* <Testimonials /> */}
