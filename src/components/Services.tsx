@@ -4,7 +4,7 @@ import {
   Cloud,
   Globe,
   Smartphone,
-  Database,
+  Megaphone,
   Cpu,
   ArrowRight,
   Paintbrush,
@@ -14,8 +14,13 @@ import { motion, Variants } from "framer-motion";
 
 const services = [
   {
-    title: "Custom Applications",
+    title: "Website Development",
     icon: <Code className="w-6 h-6" />,
+    desc: "Creating fully functional static websites and web-apps based on your needs.",
+  },
+  {
+    title: "Custom Applications",
+    icon: <Cloud className="w-6 h-6" />,
     desc: "Bespoke software tailored to your specific business logic and scale.",
   },
   {
@@ -30,13 +35,8 @@ const services = [
     desc: "Seamless connections between your services and third-party platforms.",
   },
   {
-    title: "Website Development",
-    icon: <Cloud className="w-6 h-6" />,
-    desc: "Creating fully functional static websites and web-apps based on your needs.",
-  },
-  {
-    title: "AI Solutions",
-    icon: <Cpu className="w-6 h-6" />,
+    title: "Digital Marketing",
+    icon: <Megaphone className="w-6 h-6" />,
     desc: "Integrating LLMs API's into everyday workflows.",
   },
   {
@@ -77,7 +77,7 @@ const Services: React.FC = () => {
       </div>
 
       {/* Background Grid Pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-size-[24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none" />
 
       <div className="container mx-auto px-6 relative z-10">
         <motion.div
@@ -91,7 +91,7 @@ const Services: React.FC = () => {
           </span>
           <h2 className="text-4xl md:text-6xl font-bold mb-6">
             Engineering{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon to-cyan-400">
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-neon to-cyan-400">
               Excellence
             </span>
           </h2>
@@ -115,7 +115,7 @@ const Services: React.FC = () => {
               className="group relative p-8 rounded-3xl bg-navy-900/40 border border-white/5 overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_40px_rgba(0,240,255,0.1)]"
             >
               {/* Hover Gradient Background */}
-              <div className="absolute inset-0 bg-gradient-to-br from-neon/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute inset-0 bg-linear-to-br from-neon/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
               {/* Animated Border Gradient */}
               <div className="absolute inset-0 border border-transparent group-hover:border-neon/30 rounded-3xl transition-colors duration-500" />
@@ -132,14 +132,9 @@ const Services: React.FC = () => {
                   {service.title}
                 </h3>
 
-                <p className="text-slate-400 text-sm leading-relaxed mb-8 flex-grow group-hover:text-slate-300 transition-colors">
+                <p className="text-slate-400 text-sm leading-relaxed mb-8 grow group-hover:text-slate-300 transition-colors">
                   {service.desc}
                 </p>
-
-                <div className="flex items-center text-neon text-sm font-bold uppercase tracking-wide opacity-0 transform translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
-                  Learn more{" "}
-                  <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </div>
               </div>
             </motion.div>
           ))}
