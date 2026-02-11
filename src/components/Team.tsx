@@ -21,9 +21,9 @@ const team = [
   {
     name: "Edlawit Taye",
     role: "Project Manager",
-    image: "https://picsum.photos/400/500?random=12",
+    image: "edel.jpg",
     linkedin: "",
-    email: "mailto:",
+    email: "mailto:edlawit@onyx.et",
   },
   {
     name: "Faiz Ahmed",
