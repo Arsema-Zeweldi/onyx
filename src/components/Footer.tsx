@@ -50,7 +50,7 @@ const Footer: React.FC = () => {
                 <polygon points="103.91 618.84 419.23 618.84 517.07 448.87 194.79 448.87 348.52 179.26 424.94 313.53 595.28 313.53 424.58 0 339.6 147.48 172.12 147.48 0 444.94 103.91 618.84" />
               </svg>
               <span className="font-bold text-2xl text-white tracking-tight">
-                Onyx<span className="text-neon">Solutions</span>
+                Onyx<span className="text-neon"> Solutions</span>
               </span>
             </a>
             <p className="leading-relaxed max-w-xs">
@@ -77,21 +77,19 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="text-white font-bold mb-6 text-lg">Company</h4>
             <ul className="space-y-4">
-              {["Home", "Services", "Work", "Team", "Contact"].map(
-                (item) => (
-                  <li key={item}>
-                    <a
-                      href={`#${item.toLowerCase().replace(" ", "")}`}
-                      className="hover:text-neon transition-colors flex items-center gap-2 group"
-                    >
-                      <span className="w-1 h-1 bg-neon rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
-                      <span className="group-hover:translate-x-1 transition-transform">
-                        {item}
-                      </span>
-                    </a>
-                  </li>
-                ),
-              )}
+              {["Home", "Services", "Work", "Team", "Contact"].map((item) => (
+                <li key={item}>
+                  <a
+                    href={`#${item.toLowerCase().replace(" ", "")}`}
+                    className="hover:text-neon transition-colors flex items-center gap-2 group"
+                  >
+                    <span className="w-1 h-1 bg-neon rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <span className="group-hover:translate-x-1 transition-transform">
+                      {item}
+                    </span>
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -122,7 +120,9 @@ const Footer: React.FC = () => {
         </div>
 
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p>© {new Date().getFullYear()} Onyx Solutions. All rights reserved.</p>
+          <p>
+            © {new Date().getFullYear()} Onyx Solutions. All rights reserved.
+          </p>
           <div className="flex items-center gap-6">
             <button
               onClick={scrollToTop}

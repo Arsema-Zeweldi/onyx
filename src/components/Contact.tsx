@@ -57,27 +57,32 @@ const Contact: React.FC = () => {
                   <span className="text-xl font-medium">+1 (555) 123-4567</span>
                 </div>
               </a> */}
-
-              <a
-                href="mailto:hello@placeholderlabs.com"
-                className="flex items-center gap-6 text-slate-300 group hover:text-white p-4 rounded-xl hover:bg-white/5 border border-transparent hover:border-white/5 transition-all"
-              >
-                <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-neon group-hover:scale-110 transition-transform border border-white/5 group-hover:border-neon/50">
-                  <Mail size={20} />
-                </div>
-                <a href="mailto:onyxsolutions@onyx.et">
-                  <p className="text-xs text-slate-500 uppercase tracking-wider mb-1">
-                    Email Us
-                  </p>
-                  <span className="text-xl font-medium">
-                    info@onyx.et
-                  </span>
-                </a>
-              </a>
             </div>
           </motion.div>
 
           <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <a
+              href="mailto:info@onyx.et"
+              className="flex items-center gap-6 text-slate-300 group hover:text-white p-4 rounded-xl hover:bg-white/5 border border-transparent hover:border-white/5 transition-all"
+            >
+              <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-neon group-hover:scale-110 transition-transform border border-white/5 group-hover:border-neon/50">
+                <Mail size={20} />
+              </div>
+              <a href="mailto:onyxsolutions@onyx.et">
+                <p className="text-xs text-slate-500 uppercase tracking-wider mb-1">
+                  Email Us
+                </p>
+                <span className="text-xl font-medium">info@onyx.et</span>
+              </a>
+            </a>
+          </motion.div>
+
+          {/* <motion.div
             className="relative"
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -141,7 +146,7 @@ const Contact: React.FC = () => {
                 </button>
               </form>
             </div>
-          </motion.div>
+          </motion.div> */}
         </div>
       </div>
     </section>
